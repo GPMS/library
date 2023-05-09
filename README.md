@@ -8,3 +8,6 @@ This project is made with HTML5, CSS3, and JS ES6 features.
 ## Skills Learned
 
 - JavaScript Classes;
+- HTML Template tag;
+- HTML Dialog tag;
+- Basic form validation;
