@@ -32,6 +32,11 @@ function displayLibrary() {
     authorField.textContent = book.author;
     pageCountField.textContent = book.pageCount;
     readField.checked = book.read;
+    const removeBtn = bookView.querySelector("[data-remove-btn]");
+    removeBtn.addEventListener("click", () => {
+      myLibrary.splice(book.id, 1);
+      displayLibrary();
+    });
 
     bookDisplay.append(bookView);
   }
@@ -48,6 +53,7 @@ closeDialogBtn.addEventListener("click", () => {
 });
 
 function addBookToLibrary(book) {
+  book.id = myLibrary.length;
   myLibrary.push(book);
   displayLibrary();
 }
