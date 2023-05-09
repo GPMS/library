@@ -3,6 +3,7 @@ const form = document.querySelector("[data-form]");
 const authorField = document.getElementById("author");
 const titleField = document.getElementById("title");
 const pageCountField = document.getElementById("page-count");
+const readField = document.getElementById("read");
 const closeDialogBtn = document.querySelector("[data-close-dialog-btn]");
 
 const bookDisplay = document.querySelector("[data-book-display]");
@@ -15,6 +16,7 @@ function Book(author, title, pageCount, read) {
   this.author = author;
   this.title = title;
   this.pageCount = pageCount;
+  this.read = read;
 }
 
 function displayLibrary() {
@@ -25,9 +27,11 @@ function displayLibrary() {
     const titleField = bookView.querySelector("[data-title]");
     const authorField = bookView.querySelector("[data-author]");
     const pageCountField = bookView.querySelector("[data-page-count]");
+    const readField = bookView.querySelector("[data-read]");
     titleField.textContent = book.title;
     authorField.textContent = book.author;
     pageCountField.textContent = book.pageCount;
+    readField.checked = book.read;
 
     bookDisplay.append(bookView);
   }
@@ -53,6 +57,7 @@ form.addEventListener("submit", (e) => {
   const title = titleField.value;
   const author = authorField.value;
   const pageCount = pageCountField.value;
+  const read = readField.checked;
   if (title.length == 0 || author.length == 0 || pageCount <= 0) {
     alert("Invalid book");
     return;
@@ -62,6 +67,7 @@ form.addEventListener("submit", (e) => {
   authorField.value = "";
   titleField.value = "";
   pageCountField.value = 0;
+  readField.checked = false;
   formDialog.close();
 });
 

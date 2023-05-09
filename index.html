@@ -31,6 +31,10 @@
             required
           />
         </div>
+        <div class="field">
+          <label for="read">Has Read</label>
+          <input type="checkbox" name="read" id="read" />
+        </div>
         <button data-close-dialog-btn type="button">Close</button>
         <button type="submit">Add</button>
       </form>
@@ -40,6 +44,8 @@
         <h2 data-title></h2>
         <p>By <span data-author></span></p>
         <p><span data-page-count></span> pages</p>
+        <label for="read">Has Read</label>
+        <input type="checkbox" name="read" id="read" data-read />
       </div>
     </template>
     <template data-add-book-template>
