@@ -10,11 +10,41 @@
   <body>
     <h1>Library</h1>
     <div data-book-display></div>
+    <dialog data-dialog>
+      <h2>Add New Book</h2>
+      <form data-form>
+        <div class="field">
+          <label for="title">Title</label>
+          <input id="title" name="title" type="text" minlength="1" required />
+        </div>
+        <div class="field">
+          <label for="author">Author</label>
+          <input id="author" name="author" type="text" minlength="1" required />
+        </div>
+        <div class="field">
+          <label for="page-count">Number of Pages:</label>
+          <input
+            id="page-count"
+            name="page-count"
+            type="number"
+            min="1"
+            required
+          />
+        </div>
+        <button data-close-dialog-btn type="button">Close</button>
+        <button type="submit">Add</button>
+      </form>
+    </dialog>
     <template data-book-template>
       <div class="book">
         <h2 data-title></h2>
         <p>By <span data-author></span></p>
         <p><span data-page-count></span> pages</p>
+      </div>
+    </template>
+    <template data-add-book-template>
+      <div class="add-book">
+        <button data-add-btn>New Book</button>
       </div>
     </template>
   </body>
